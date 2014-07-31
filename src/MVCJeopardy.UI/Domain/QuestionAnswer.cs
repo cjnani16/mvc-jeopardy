@@ -8,30 +8,30 @@ namespace MVCJeopardy.Core.Domain
 {
     public class QuestionAnswer
     {
-        public bool visited;
-        public string question;
-        public string answer;
-        public int pointValue;
-        public Guid qId;
+        public bool Visited;
+        public string Question;
+        public string Answer;
+        public int PointValue;
+        public Guid Id;
 
         public QuestionAnswer(string ans, string quest, int valu)
         {
-            visited = false;
-            question = quest;
-            answer = ans;
-            pointValue = valu;
+            Visited = false;
+            Question = quest;
+            Answer = ans;
+            PointValue = valu;
         }
 
         public QuestionAnswer()
         {
-            visited = false;
-            question = "Why did the Chicken cross the road?";
-            answer = "To get to the other side.";
-            pointValue = 100;
+            Visited = false;
+            Question = "Why did the Chicken cross the road?";
+            Answer = "To get to the other side.";
+            PointValue = 100;
         }
 
-        public void setVisited(bool set) {
-            visited = set;
+        public void SetVisited(bool set) {
+            Visited = set;
         }
     }
 }

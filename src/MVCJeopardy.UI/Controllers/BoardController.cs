@@ -63,8 +63,8 @@ namespace MVCJeopardy.UI.Controllers
 
         public ActionResult ShowAnswer(string sID, int cC, int cQ)
         {
-            
-            var loaded = _repository.FindByTitle("Demo");
+
+            var loaded = _repository.FindByTitle("MVC");
 
             var cQuest = loaded.gameBoard[cC].questions[cQ];
             var cCat = loaded.gameBoard[cC];
@@ -85,7 +85,7 @@ namespace MVCJeopardy.UI.Controllers
         {
                 Guid id = new Guid(g);
                 QuestionSet set = _repository.Load(id);
-                set.gameBoard[cC].questions[cQ].visited = true;
+                set.gameBoard[cC].questions[cQ].Visited = true;
                 _repository.SaveChanges();
 
                 return RedirectToAction("Index");

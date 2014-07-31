@@ -13,6 +13,11 @@ namespace MVCJeopardy.Core.Domain
         public Category[] gameBoard;
         public Guid Id { get; set; }
 
+        public QuestionSet()
+        {
+            Title = "NONE";
+        }
+
         public QuestionSet(string title, string desc, Category[] gB)
         {
             Title = title;
