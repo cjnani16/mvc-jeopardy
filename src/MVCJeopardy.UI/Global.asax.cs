@@ -51,7 +51,9 @@ namespace MVCJeopardy.UI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
-            RavenDbConfig.FillData();
+            //RavenDbConfig.FillData();
+            var filePath = Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["QuestionSetXmlFile"]);
+            RavenDbConfig.FillDataUsingXmlFile(filePath);
         }
 
 		public class FluentValidationConfigResource

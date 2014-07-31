@@ -89,9 +89,9 @@
                         @for (int cCategory = 0; cCategory < Model.questionSet.gameBoard.Length; cCategory++)
                         {
                             <td align="center">
-                                @if (!Model.questionSet.gameBoard[cCategory].questions[cQuestion].visited)
+                                @if (!Model.questionSet.gameBoard[cCategory].questions[cQuestion].Visited)
                                 {
-                                    <a>$@Html.ActionLink(Model.questionSet.gameBoard[cCategory].questions[cQuestion].pointValue.ToString(), "ShowAnswer", new { sID = Model.questionSet.Id, cC = cCategory, cQ = cQuestion }, null)</a>
+                                    <a>$@Html.ActionLink(Model.questionSet.gameBoard[cCategory].questions[cQuestion].PointValue.ToString(), "ShowAnswer", new { sID = Model.questionSet.Id, cC = cCategory, cQ = cQuestion }, null)</a>
 
                                 }
                             </td>

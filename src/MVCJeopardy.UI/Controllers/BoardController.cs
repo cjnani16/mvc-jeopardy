@@ -97,7 +97,7 @@ namespace MVCJeopardy.UI.Controllers
         public ActionResult MarkVisited(string g, int cC, int cQ)
         {
                 QuestionSet set = _repository.Load(Guid.Parse(g));
-                set.gameBoard[cC].questions[cQ].visited = true;
+                set.gameBoard[cC].questions[cQ].Visited = true;
                 _repository.SaveChanges();
 
                 return RedirectToAction("Index");

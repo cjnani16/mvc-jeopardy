@@ -317,3 +317,5 @@ C:\Users\Jnani\Documents\MVC\jeopardy\src\MVCJeopardy.UI\bin\tr\FluentValidation
 C:\Users\Jnani\Documents\MVC\jeopardy\src\MVCJeopardy.UI\obj\Debug\MVCJeopardy.csprojResolveAssemblyReference.cache
 C:\Users\Jnani\Documents\MVC\jeopardy\src\MVCJeopardy.UI\obj\Debug\MVCJeopardy.UI.dll
 C:\Users\Jnani\Documents\MVC\jeopardy\src\MVCJeopardy.UI\obj\Debug\MVCJeopardy.UI.pdb
+C:\dev\jeopardy\src\MVCJeopardy.UI\bin\App_Data\QuestionSet.xml
+C:\Users\Jnani\Documents\MVC\jeopardy\src\MVCJeopardy.UI\bin\App_Data\QuestionSet.xml

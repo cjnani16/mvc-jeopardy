@@ -56,9 +56,9 @@
 <body>
     <div id="answerBG">
         <div id="answerPage">
-            <h1> @Model.cCategory.Name for @Model.cQuestion.pointValue</h1>
-            <p id="answer" style="display:block;">@Model.cQuestion.answer</p>
-            <p id="question" style="display:none;">@Model.cQuestion.question</p>
+            <h1> @Model.cCategory.Name for @Model.cQuestion.PointValue</h1>
+            <p id="answer" style="display:block;">@Model.cQuestion.Answer</p>
+            <p id="question" style="display:none;">@Model.cQuestion.Question</p>
             <script>
                 function showQuestion() {
                     var q = document.getElementById("question"),
