@@ -9,6 +9,8 @@
     }
 
     #boardPage {
+        font-family: Arial;
+        text-shadow: 0.1em 0.1em #000;
         margin: 0px auto;
         padding: 50px 100px;
         text-align: center;
@@ -16,27 +18,48 @@
         background-color: rgba(255, 255, 255, 0.5);
     }
 
-    table {
+        #boardPage h1 {
+            color: white;
+            font-size: 20pt;
+        }
+
+        #boardPage h4 {
+            margin-top: 0px;
+            color: white;
+            font-size: 16pt;
+        }
+
+    #board {
         width: 720px;
+        border: 5px solid #ffd800;
     }
 
-    thead tr td {
-        vertical-align: central;
-        padding: 20px 30px;
-        border: 2px solid #3c3c3c;
-        background-color: rgba(0, 38, 255, 0.9);
-    }
+        #board thead tr td h1 {
+            text-shadow: 0.1em 0.1em #000;
+            margin: 0px;
+            font-size: 30pt;
+            font-family: Impact;
+            color: white;
+            vertical-align: central;
+            background-color: none;
+        }
 
-    tr td {
-        vertical-align: central;
-        padding: 20px 30px;
-        border: 2px solid #3c3c3c;
-        background-color: rgba(0, 38, 255, 0.5);
-    }
+        #board tr td {
+            text-shadow: 0.1em 0.1em #000;
+            width: 100px;
+            overflow: hidden;
+            font-size: 32pt;
+            font-family: Impact;
+            color: #ffdb00;
+            vertical-align: central;
+            padding: 5px 10px;
+            border: 3px solid #000000;
+            background-color: rgba(0, 38, 255, 0.9);
+        }
 
-    a {
-        color: #00ffff;
-    }
+            #board tr td a {
+                color: #ffdb00;
+            }
 </style>
 <script>
 </script>
@@ -45,7 +68,7 @@
     <div id="boardPage" align="center">
         <h1>@Model.questionSet.Title</h1>
         <h4>"@Model.questionSet.Description"</h4>
-        <table cellspacing="20" cellpadding="50" border="1" align="center">
+        <table id="board" cellspacing="0" cellpadding="50" border="1" align="center">
             <thead>
                 <tr>
                     @{
@@ -68,17 +91,8 @@
                             <td align="center">
                                 @if (!Model.questionSet.gameBoard[cCategory].questions[cQuestion].visited)
                                 {
-                                    <a>@Html.ActionLink(Model.questionSet.gameBoard[cCategory].questions[cQuestion].pointValue.ToString(), "ShowAnswer", new { sID = Model.questionSet.Id, cC = cCategory, cQ = cQuestion }, null)</a>
+                                    <a>$@Html.ActionLink(Model.questionSet.gameBoard[cCategory].questions[cQuestion].pointValue.ToString(), "ShowAnswer", new { sID = Model.questionSet.Id, cC = cCategory, cQ = cQuestion }, null)</a>
 
-                                }
-                                else
-                                {
-                                    <style>
-                                        td {
-                                            background-color: rgba(255, 0, 0, 0.5);
-                                        }
-                                    </style>
-                                    <del>@Model.questionSet.gameBoard[cCategory].questions[cQuestion].pointValue</del>
                                 }
                             </td>
                         }

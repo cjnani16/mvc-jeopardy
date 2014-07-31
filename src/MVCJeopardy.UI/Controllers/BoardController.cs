@@ -34,20 +34,29 @@ namespace MVCJeopardy.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string title, string desc, string[] qs, string[] ans, int[] vs, string[] cats, int nc, int nq)
+        public ActionResult Index(string title, string desc, ICollection<string> qs, ICollection<string> ans, ICollection<int> vs, ICollection<string> cats, int nc, int nq)
         {
             List<QuestionAnswer> q = new List<QuestionAnswer>();
             List<Category> c = new List<Category>();
 
-            for (int cC = 0; cC < cats.Length; cC++)
+            string[] qsarray = new string[qs.Count];
+            qs.CopyTo(qsarray, 0);
+            string[] ansarray = new string[ans.Count];
+            ans.CopyTo(ansarray, 0);
+            int[] vsarray = new int[vs.Count];
+            vs.CopyTo(vsarray, 0);
+            string[] catsarray = new string[cats.Count];
+            cats.CopyTo(catsarray, 0);
+
+            for (int cC = 0; cC < catsarray.Length; cC++)
             {
-                for (int cQ = 0; cQ < ans.Length; cQ++)
+                for (int cQ = 0; cQ < ansarray.Length; cQ++)
                 {
-                    QuestionAnswer qa = new QuestionAnswer(ans[cQ], qs[cQ], vs[cQ]);
+                    QuestionAnswer qa = new QuestionAnswer(ansarray[cQ], qsarray[cQ], vsarray[cQ]);
                     q.Add(qa);
                 }
                 QuestionAnswer[] questionArray = q.ToArray();
-                Category ca = new Category(cats[cC], questionArray);
+                Category ca = new Category(catsarray[cC], questionArray);
 
                 c.Add(ca);
             }
@@ -56,15 +65,19 @@ namespace MVCJeopardy.UI.Controllers
             var model = new QuestionSet(title, desc, categoryArray);
 
             _repository.Insert(model);
+            _repository.SaveChanges();
 
-            return View(model);
+            BoardIndexModel bmodel = new BoardIndexModel();
+            bmodel.questionSet = model;
+
+            return View(bmodel);
         }
 
 
         public ActionResult ShowAnswer(string sID, int cC, int cQ)
         {
             
-            var loaded = _repository.FindByTitle("Demo");
+            var loaded = _repository.Load(Guid.Parse(sID));
 
             var cQuest = loaded.gameBoard[cC].questions[cQ];
             var cCat = loaded.gameBoard[cC];
@@ -83,8 +96,7 @@ namespace MVCJeopardy.UI.Controllers
 
         public ActionResult MarkVisited(string g, int cC, int cQ)
         {
-                Guid id = new Guid(g);
-                QuestionSet set = _repository.Load(id);
+                QuestionSet set = _repository.Load(Guid.Parse(g));
                 set.gameBoard[cC].questions[cQ].visited = true;
                 _repository.SaveChanges();
 

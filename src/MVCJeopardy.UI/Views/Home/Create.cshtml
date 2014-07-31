@@ -14,7 +14,7 @@
         <h1>Let's create your question set.</h1>
     </div>
     <br />
-    <form id="createForm" action="/Home/Create" method="post" style="text-align: center; margin: 0 auto; width: 725px; background-color: rgba(255, 255, 255,0.8); border: 2px solid #808080; padding: 20px;">
+    <form id="createForm" action="@Url.Action("Index","Board")" method="post" style="text-align: center; margin: 0 auto; width: 725px; background-color: rgba(255, 255, 255,0.8); border: 2px solid #808080; padding: 20px;">
         <table align="center" cellpadding="20" cellspacing="10" style="table-layout: fixed; vertical-align: top; ">
             <tr>
                 <td colspan="2" align="center" style="padding: 0px;">
@@ -167,6 +167,14 @@
 
                                     }
                                 }
+                                var guid = "";
+                                'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                                    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                                    guid = v.toString(16);
+                                });
+
+
+                                form.submit();
                             }
                             else {
 
@@ -175,7 +183,7 @@
 
                             }
                         }
-
+                        
                     </script>
                     <div id="submitButton" onclick="javascript:subClick();" style="font-family: bold; text-align: center; color: rgb(240,240,240); background-color: #808080; outline: 2px solid #484848; padding: 10px 20px;" onmouseover="this.style.backgroundColor = '#9E9D9D'" onmouseout="this.style.backgroundColor = '#808080'">Submit set</div>
                 </td>
