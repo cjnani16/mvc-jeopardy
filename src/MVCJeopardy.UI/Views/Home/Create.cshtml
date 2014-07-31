@@ -1,0 +1,185 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model MVCJeopardy.UI.Models.CreateBoardModel
+<style>
+    td {
+        padding-right: 0px;
+    }
+</style>
+<div align="center" class="CreatePage"
+     style="background: url('http://www.reactiongifs.com/wp-content/uploads/2013/11/haleighluja.gif') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; text-align: center; ">
+
+    <div style="padding: 5px 20px 5px 20px; background-color: #0026ff; color: #ffffff; border: 1px solid #808080;">
+        <h1>Let's create your question set.</h1>
+    </div>
+    <br />
+    <form id="createForm" action="/Home/Create" method="post" style="text-align: center; margin: 0 auto; width: 725px; background-color: rgba(255, 255, 255,0.8); border: 2px solid #808080; padding: 20px;">
+        <table align="center" cellpadding="20" cellspacing="10" style="table-layout: fixed; vertical-align: top; ">
+            <tr>
+                <td colspan="2" align="center" style="padding: 0px;">
+                    <b>Set Name:</b>
+                    <h6>the name of your set</h6>
+                    <textarea required name="title" style="height: 21px;" cols="15" placeholder="Hawaiian History"></textarea>
+                    <br />
+                    <br />
+                    <b>Set Description:</b>
+                    <h6>in case the title isn't enough</h6>
+                    <textarea required name="desc" rows="3" cols="20" placeholder="Questions mainly about the rich history of the place where Lilo and Stitch live."></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top; text-align: center;">
+                    <b># of Categories:</b>
+                    <h6 id="tbox">how many question categories are in your set?</h6>
+                    <textarea id="numCats" name="nc" required style="height: 21px; width: 21px;"></textarea> <!--Numcats-->
+                    <script>
+                        var inputCat = document.getElementById("numCats");//get id
+                        inputCat.onkeyup = inputCat.onchange = function (e) {
+                            $('.CatDiv').remove();//remove old elements
+                            if (!(inputCat.value == "")) {
+
+                                var numCats = parseInt(inputCat.value, 10);
+                                if (numCats < 7 && numCats > 0) {
+
+                                    document.getElementById("tbox").innerHTML = numCats;
+                                    var theirDiv = document.createElement("div");
+                                    theirDiv.setAttribute("class", "CatDiv");
+
+                                    for (var i = 1; i <= numCats; i++) {
+                                        var newE = document.createElement("textarea");
+                                        newE.setAttribute("required", "");
+                                        newE.setAttribute("style", "width: 100px; height: 21px;");
+                                        var Br = document.createElement("br");
+                                        var Hr = document.createElement("hr");
+                                        var Text = "Name for Category " + i + ": ";
+                                        var IDname = "cat" + i;
+                                        var newT = document.createTextNode(Text);
+                                        newE.setAttribute("id", IDname);
+                                        newE.setAttribute("name", "cats");
+                                        theirDiv.appendChild(Hr);
+                                        theirDiv.appendChild(Br);
+                                        theirDiv.appendChild(newT);
+                                        theirDiv.appendChild(Br);
+                                        theirDiv.appendChild(newE);
+                                    }
+
+                                    inputCat.parentElement.appendChild(theirDiv);
+                                }
+                                else {
+                                    document.getElementById("tbox").innerHTML = "1 to 6 categories, please. We don't have all day.";
+                                }
+                            }
+                        }
+
+                    </script>
+                </td>
+                <td style="vertical-align: top; text-align: center;">
+                    <b># of Questions per Category:</b>
+                    <h6 id="qtbox">question 1=100 points, question 2=200 points, question 3=300 points, etc.</h6>
+                    <textarea id="numQs" name="nq" required style="height: 21px; width: 21px;"></textarea>
+                    <script>
+                        var inputCat = document.getElementById("numCats");
+                        var inputQs = document.getElementById("numQs");
+                        inputQs.onkeyup = inputQs.onchange = function (e) {
+                            $('.QDiv').remove();
+
+                            if (!(inputCat.value == "") && !(inputQs.value == "")) {
+
+                                var numCats = parseInt(inputCat.value, 10),
+                                    numQs = parseInt(inputQs.value, 10);
+
+                                if (numCats <= 6 && numQs <= 9 && numCats > 0 && numQs > 0) {
+                                    document.getElementById("qtbox").innerHTML = numCats;
+                                    var theirDiv = document.createElement("div");
+                                    theirDiv.setAttribute("class", "QDiv");
+
+
+                                    for (var i = 1; i <= numCats; i++) {
+                                        for (var ii = 1; ii <= numQs; ii++) {
+                                            var catID = "cat" + i;
+                                            var catName = document.getElementById(catID).value;
+                                            var Br = document.createElement("br");
+                                            var Hr = document.createElement("hr");
+                                            var Text = 'Answer for "' + catName + '" for ' + ii * 100 + " points:  ";
+                                            var Text2 = 'Question for "' + catName + '" for ' + ii * 100 + " points:  ";
+                                            var IDname = "cat" + i + "a" + ii;
+                                            var IDname2 = "cat" + i + "q" + ii;
+                                            var newT = document.createTextNode(Text);
+                                            var newT2 = document.createTextNode(Text2);
+                                            var newE = document.createElement("textarea");
+                                            newE.setAttribute("required", "");
+                                            newE.setAttribute("style", "width: 300px; height: 50px;");
+                                            newE.setAttribute("id", IDname);
+                                            newE.setAttribute("name", "ans");
+
+
+                                            var newE2 = document.createElement("textarea");
+                                            newE2.setAttribute("required", "");
+                                            newE2.setAttribute("style", "width: 300px; height: 50px;");
+                                            newE2.setAttribute("id", IDname2);
+                                            newE2.setAttribute("name", "qs");
+
+                                            theirDiv.appendChild(Hr);
+                                            theirDiv.appendChild(newT);
+                                            theirDiv.appendChild(newE);
+                                            theirDiv.appendChild(Br);
+                                            theirDiv.appendChild(Br);
+                                            theirDiv.appendChild(newT2);
+                                            theirDiv.appendChild(newE2);
+                                        }
+                                    }
+
+                                    inputQs.parentElement.appendChild(theirDiv);
+                                }
+                                else {
+                                    document.getElementById("qtbox").innerHTML = "1 to 9 questions per category, please. We don't have all day.";
+                                }
+                            }
+                        }
+
+                    </script>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <hr />
+                    <script type="text/javascript">
+
+                        function subClick() {
+                            form = document.getElementById("createForm");
+                            btn = document.getElementById("submitButton");
+
+                            var nCategories = parseInt(document.getElementById("numCats").value, 10);
+                            var nQuestions = parseInt(document.getElementById("numQs").value, 10);
+
+                            if (!isNaN(nCategories) & !isNaN(nQuestions) & nCategories <= 6 && nCategories > 0 && nQuestions <= 9 && nQuestions > 0) {
+                                for (var cCategory = 1; cCategory <= nCategories; cCategory++) {
+
+                                    for (var cQuestion = 1; cQuestion <= nQuestions; cQuestion++) { //loop throught that category's questions
+
+
+                                        holdInfo = document.createElement("span");
+                                        holdInfo.innerHTML = '<input name="vs" hidden value="' + (cQuestion * 100) + '"/>'; //hidden for vs
+                                        form.appendChild(holdInfo);
+
+
+                                    }
+                                }
+                            }
+                            else {
+
+                                btn.style.backgroundColor = "#ff0000";
+                                btn.innerText = "Please check that your form is filled correctly."; //why doesn't this run??
+
+                            }
+                        }
+
+                    </script>
+                    <div id="submitButton" onclick="javascript:subClick();" style="font-family: bold; text-align: center; color: rgb(240,240,240); background-color: #808080; outline: 2px solid #484848; padding: 10px 20px;" onmouseover="this.style.backgroundColor = '#9E9D9D'" onmouseout="this.style.backgroundColor = '#808080'">Submit set</div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

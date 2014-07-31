@@ -1,0 +1,90 @@
+﻿@model MVCJeopardy.UI.Models.BoardIndexModel
+<style>
+    #boardBG {
+        background: url('http://media.giphy.com/media/5xtDarmaKOwqLakGHIY/giphy.gif') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #boardPage {
+        margin: 0px auto;
+        padding: 50px 100px;
+        text-align: center;
+        width: 80%;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    table {
+        width: 720px;
+    }
+
+    thead tr td {
+        vertical-align: central;
+        padding: 20px 30px;
+        border: 2px solid #3c3c3c;
+        background-color: rgba(0, 38, 255, 0.9);
+    }
+
+    tr td {
+        vertical-align: central;
+        padding: 20px 30px;
+        border: 2px solid #3c3c3c;
+        background-color: rgba(0, 38, 255, 0.5);
+    }
+
+    a {
+        color: #00ffff;
+    }
+</style>
+<script>
+</script>
+
+<div id="boardBG">
+    <div id="boardPage" align="center">
+        <h1>@Model.questionSet.Title</h1>
+        <h4>"@Model.questionSet.Description"</h4>
+        <table cellspacing="20" cellpadding="50" border="1" align="center">
+            <thead>
+                <tr>
+                    @{
+                        for (int i = 0; i < Model.questionSet.gameBoard.Length; i++)
+                        {
+                            <td>
+                                <h1>@Model.questionSet.gameBoard[i].Name</h1>
+                            </td>
+                        }
+                    }
+                </tr>
+
+            </thead>
+            <tbody>
+                @for (int cQuestion = 0; cQuestion < Model.questionSet.gameBoard[0].questions.Length; cQuestion++)
+                {
+                    <tr>
+                        @for (int cCategory = 0; cCategory < Model.questionSet.gameBoard.Length; cCategory++)
+                        {
+                            <td align="center">
+                                @if (!Model.questionSet.gameBoard[cCategory].questions[cQuestion].visited)
+                                {
+                                    <a>@Html.ActionLink(Model.questionSet.gameBoard[cCategory].questions[cQuestion].pointValue.ToString(), "ShowAnswer", new { sID = Model.questionSet.Id, cC = cCategory, cQ = cQuestion }, null)</a>
+
+                                }
+                                else
+                                {
+                                    <style>
+                                        td {
+                                            background-color: rgba(255, 0, 0, 0.5);
+                                        }
+                                    </style>
+                                    <del>@Model.questionSet.gameBoard[cCategory].questions[cQuestion].pointValue</del>
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+C:\Users\Jnani\Documents\MVC\mvc\src\IntegrationTestMVC\bin\Debug\IntegrationTestMVC.dll
+C:\Users\Jnani\Documents\MVC\mvc\src\IntegrationTestMVC\bin\Debug\IntegrationTestMVC.pdb
+C:\Users\Jnani\Documents\MVC\mvc\src\IntegrationTestMVC\obj\Debug\IntegrationTestMVC.csprojResolveAssemblyReference.cache
+C:\Users\Jnani\Documents\MVC\mvc\src\IntegrationTestMVC\obj\Debug\IntegrationTestMVC.dll
+C:\Users\Jnani\Documents\MVC\mvc\src\IntegrationTestMVC\obj\Debug\IntegrationTestMVC.pdb
+C:\Users\Jnani\Documents\MVC\jeopardy\src\IntegrationTestMVC\bin\Debug\IntegrationTestMVC.dll
+C:\Users\Jnani\Documents\MVC\jeopardy\src\IntegrationTestMVC\bin\Debug\IntegrationTestMVC.pdb
+C:\Users\Jnani\Documents\MVC\jeopardy\src\IntegrationTestMVC\obj\Debug\IntegrationTestMVC.csprojResolveAssemblyReference.cache
+C:\Users\Jnani\Documents\MVC\jeopardy\src\IntegrationTestMVC\obj\Debug\IntegrationTestMVC.dll
+C:\Users\Jnani\Documents\MVC\jeopardy\src\IntegrationTestMVC\obj\Debug\IntegrationTestMVC.pdb
+C:\dev\jeopardy\src\IntegrationTestMVC\bin\Debug\IntegrationTestMVC.dll
+C:\dev\jeopardy\src\IntegrationTestMVC\bin\Debug\IntegrationTestMVC.pdb
+C:\dev\jeopardy\src\IntegrationTestMVC\obj\Debug\IntegrationTestMVC.csprojResolveAssemblyReference.cache
+C:\dev\jeopardy\src\IntegrationTestMVC\obj\Debug\IntegrationTestMVC.dll
+C:\dev\jeopardy\src\IntegrationTestMVC\obj\Debug\IntegrationTestMVC.pdb

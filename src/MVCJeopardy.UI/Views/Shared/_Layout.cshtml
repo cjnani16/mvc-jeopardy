@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Code Camp Server Lite</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        /* Set width on the form input elements since they're 100% wide by default */
+        input,
+        select,
+        textarea {
+            text-align: center;
+            max-width: 280px;
+        }
+
+        body {
+            text-align: center;
+            padding: 75px;
+            background-color: black;
+        }
+
+        /* Set padding to keep content from hitting the edges */
+        .body-content {
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        a {
+            background-color: none;
+        }
+    </style>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" media="all" />
+
+</head>
+<!--
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">//Html.ActionLink("code camp server lite", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        //Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>//Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>//Html.ActionLink("Conferences", "Index", "Conference")</li>
+                            <li>//Html.ActionLink("About", "About", "Home")</li>
+                            <li>//Html.ActionLink("Board", "Index", "Board")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            //RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                //RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; //DateTime.Now.Year - Code Camp Server Lite</p>
+                </div>
+            </div>
+        </footer>
+
+        //Scripts.Render("~/bundles/jquery")
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $('.date-pick').datepicker();
+
+        </script>
+        //RenderSection("scripts", required: false)
+    </body>
+</html>
+            -->
+<body>
+    <ul id="menu">
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+    </ul>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $('.date-pick').datepicker();
+
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="AppStartPage"
+     style="background: url('http://www.placekitten.com/300/500') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">
+    <style>
+        a, td {
+            color: #191919;
+        }
+    </style>
+    <div align="center" style="margin: 0 auto; width: 80%; background-color: rgba(255, 255, 255,0.5);">
+        <h1><b>MVC JEOPARDY</b></h1>
+        <h2>What do you want to do?</h2>
+        <table cellpadding="20" cellspacing="10">
+            <tr>
+                <td style="color: black; padding: 40px 15px; margin:0px; background-color:rgb(0, 38, 255);" onmouseover="this.style.backgroundColor = 'rgb(20, 58, 255)'" onmouseout="this.style.backgroundColor = 'rgb(0, 38, 255)'">
+                    <a style="color: black;" href="@Url.Action("Create")">
+                    Start a new game and create your own questions.
+                    </a>
+                <td style="padding: 40px 15px; margin: 0px; background-color: rgb(255, 20, 20);" onmouseout="this.style.backgroundColor = 'rgb(255, 0, 0)'" onmouseover="this.style.backgroundColor = 'rgb(255, 20, 20)'">
+                    "Start a new game and upload your questions in .xml format (Under Construction)"
+                </td>
+                <td style="padding: 40px 15px; margin: 0px; background-color: rgb(20, 255, 30);" onmouseout="this.style.backgroundColor = 'rgb(0, 255, 10)'" onmouseover="this.style.backgroundColor = 'rgb(20, 255, 30)'">
+                    @Html.ActionLink("Start a demo game with farm-fresh, hand picked questions from me.", "Index", "Board")
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>

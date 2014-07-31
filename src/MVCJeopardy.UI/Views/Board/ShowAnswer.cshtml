@@ -1,0 +1,88 @@
+﻿@model MVCJeopardy.UI.Models.ShowAnswerModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MVC Jeopardy</title>
+    <style>
+        #answerBG {
+            background: url('http://media.giphy.com/media/10ZEYfjsQ5V160/giphy.gif') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            text-align: center;
+            width: 100%;
+        }
+
+    #answerPage {
+        margin: 0px auto;
+        padding: 50px 100px;
+        text-align: center;
+        width: 80%;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    table {
+        table-layout: fixed;
+        width: 720px;
+    }
+
+    table, th, td, #answer, #question {
+        border: 2px solid #3c3c3c;
+        background-color: rgba(0, 38, 255, 0.5);
+    }
+
+    a, #answer, #question {
+        color: #00ffff;
+    }
+
+    #answer, #question {
+        padding: 30px 70px;
+        font-size: 25pt;
+    }
+
+    #answer {
+        display: block;
+    }
+
+    #question {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="answerBG">
+        <div id="answerPage">
+            <h1> @Model.cCategory.Name for @Model.cQuestion.pointValue</h1>
+            <p id="answer" style="display:block;">@Model.cQuestion.answer</p>
+            <p id="question" style="display:none;">@Model.cQuestion.question</p>
+            <script>
+                function showQuestion() {
+                    var q = document.getElementById("question"),
+                        a = document.getElementById("answer"),
+                        s = document.getElementById("showButton");
+
+                    if (q.style.display == "none") {
+                        q.style.display = "block";
+                        a.style.display = "none";
+                        s.innerHTML = "Show answer";
+                    }
+                    else {
+                        q.style.display = "none";
+                        a.style.display = "block";
+                        s.innerHTML = "Show question";
+                    }
+
+                }
+            </script>
+            <button id="showButton" onclick="showQuestion()" style="font-family: bold; text-align: center; color: rgb(240,240,240); background-color: #808080; outline: 2px solid #484848; padding: 10px 20px;" onmouseover="this.style.backgroundColor = '#9E9D9D'" onmouseout="    this.style.backgroundColor = '#808080'">Show question</button>
+
+            <a href="@Url.Action("MarkVisited", "Board", new { g = Model.guid.ToString(), cC = Model.curC, cQ = Model.curQ })" id="backButton" style="font-size: 16.3167px; font-weight: 600; text-decoration: none; display: inline; font-family: bold; text-align: center; color: rgb(240,240,240); background-color: #808080; outline: 2px solid #484848; padding: 10px 20px;" onmouseover="this.style.backgroundColor = '#9E9D9D'" onmouseout="    this.style.backgroundColor = '#808080'">Return to board </a>
+             
+        </div>
+    </div>
+</body>
+</html>
