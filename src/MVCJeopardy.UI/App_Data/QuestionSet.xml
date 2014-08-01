@@ -2,7 +2,7 @@
 <QuestionSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <gameBoard>
     <Category>
-      <Name>My Point on View</Name>
+      <Name>My Point of View</Name>
       <questions>
         <QuestionAnswer>
           <Id>B55BE99B-D772-410F-B0AF-9D0675596201</Id>
@@ -42,7 +42,7 @@
       </questions>
     </Category>
     <Category>
-      <Name>C# like Razor</Name>
+      <Name>C# like a Razor</Name>
       <questions>
         <QuestionAnswer>
           <Id>E62C80D4-7888-4C35-A287-94BB643014D2</Id>
@@ -162,7 +162,7 @@
       </questions>
     </Category>
     <Category>
-      <Name>In Route</Name>
+      <Name>En Route</Name>
       <questions>
         <QuestionAnswer>
           <Id>AF270912-9808-4D5A-B3ED-7733B3A8162B</Id>

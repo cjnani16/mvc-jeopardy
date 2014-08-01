@@ -12,10 +12,9 @@ namespace MVCJeopardy.Core.Domain
         public string Description { get; set; }
         public Category[] gameBoard;
         public Guid Id { get; set; }
-
         public QuestionSet()
         {
-            Title = "NONE";
+
         }
 
         public QuestionSet(string title, string desc, Category[] gB)
@@ -23,6 +22,16 @@ namespace MVCJeopardy.Core.Domain
             Title = title;
             Description = desc;
             gameBoard = gB;
+        }
+
+        public void sortCategories() {
+            foreach (Category ccat in gameBoard)
+            {
+                Array.Sort(ccat.questions, delegate(QuestionAnswer q1, QuestionAnswer q2)
+                {
+                    return q1.PointValue.CompareTo(q2.PointValue); // (q1.PV - q2.PV)
+                });
+            }
         }
     }
 }

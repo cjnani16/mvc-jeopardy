@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - Code Camp Server Lite</title>
+    <title>@ViewBag.Title MVC Jeopardy</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
@@ -18,7 +18,7 @@
 
         body {
             text-align: center;
-            padding: 75px;
+            padding: 15px 75px;
             background-color: black;
         }
 
@@ -85,8 +85,6 @@
 <body>
     <ul id="menu">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
     </ul>
     @RenderBody()
     @Scripts.Render("~/bundles/jquery")

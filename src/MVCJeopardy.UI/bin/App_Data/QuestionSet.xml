@@ -2,241 +2,241 @@
 <QuestionSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <gameBoard>
     <Category>
-      <Name>Category 1</Name>
+      <Name>My Point on View</Name>
       <questions>
         <QuestionAnswer>
           <Id>B55BE99B-D772-410F-B0AF-9D0675596201</Id>
           <PointValue>100</PointValue>
-          <Question>What is a strongly typed view?</Question>
-          <Answer>A view created with a model class.</Answer>
+          <Question>What is View?</Question>
+          <Answer>The display layer in MVC pattern.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>E40E8E9A-5AC3-4152-991A-12A3F7296CB3</Id>
           <PointValue>200</PointValue>
           <Question>What is a partial view?</Question>
-          <Answer>A reusable view</Answer>
+          <Answer>A reusable view.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>23F76141-DE5A-46B2-A5C5-CC37ED28B80A</Id>
           <PointValue>300</PointValue>
-          <Question>What are controller, action, and parameters?</Question>
-          <Answer>The three segments of the default route.</Answer>
+          <Question>What is a strongly typed view?</Question>
+          <Answer>A view created with a model class.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>8F5B0C4E-AF59-4CCC-8522-D0103BA5309D</Id>
           <PointValue>400</PointValue>
           <Visited>false</Visited>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is ViewBag?</Question>
+          <Answer>Along with ViewData and TempData, the third option ASP.NET MVC offers for passing data from the controller into a view.</Answer>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>8F5B0C4E-AF59-4CCC-8522-D0103BA5309D</Id>
           <PointValue>500</PointValue>
-          <Answer>The three segments of the default route.</Answer>
-          <Question>What are controller, action, and parameters?</Question>
+          <Question>What is Razor?</Question>
+          <Answer>This view engine was introduced in ASP.NET MVC 3.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
       </questions>
     </Category>
     <Category>
-      <Name>Category 2</Name>
+      <Name>C# like Razor</Name>
       <questions>
         <QuestionAnswer>
           <Id>E62C80D4-7888-4C35-A287-94BB643014D2</Id>
-          <PointValue>100</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <PointValue>1000</PointValue>
+          <Question>What is .cshtml?</Question>
+          <Answer>The file extension used by Razor view engine for C# applications.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>3EB035E5-33C9-4C7E-AA4D-FDDBD7F27DE2</Id>
           <PointValue>200</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is the @ symbol?</Question>
+          <Answer>This symbol indicates RAZOR syntax.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>3A9B6DF6-8918-4516-BE9C-0CDED44AD64E</Id>
           <PointValue>300</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is the @model keyword?</Question>
+          <Answer>This keyword defines the model that is being used in the view.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>1C3BF5A7-5873-4116-B274-4F0A6C9E2D47</Id>
           <PointValue>400</PointValue>
           <Visited>false</Visited>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is the HtmlHelper class?</Question>
+          <Answer>This class supports the rendering of HTML controls in a view.</Answer>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>F0DAB5E6-1864-436E-BC94-3FBA795D94E1</Id>
           <PointValue>500</PointValue>
-          <Answer></Answer>
-          <Question></Question>
+          <Question>What is PartialExtensions.Partial?</Question>
+          <Answer>This method renders the specified partial view as an HTML-encoded string.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
       </questions>
     </Category>
     <Category>
-      <Name>Category 3</Name>
+      <Name>Super Model</Name>
       <questions>
         <QuestionAnswer>
           <Id>D12C6669-888C-4318-8D03-16A738457D14</Id>
           <PointValue>100</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is Model?</Question>
+          <Answer>The business layer in MVC pattern.</Answer>"
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>E8F8C698-40C1-4B45-B266-C9DFDF1D6D4A</Id>
           <PointValue>200</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is a Repository?</Question>
+          <Answer>The pattern that separates the logic that retrieves the data and maps it to the entity model from the business logic that acts on the model.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>251B1744-B142-426F-91C2-A3EF7BDA71A1</Id>
           <PointValue>300</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is the Entity Framework?</Question>
+          <Answer>A .NET Framework data-access technology used to define and work with model classes.</Answer>
+          <Visited>false</Visited>
+        </QuestionAnswer>
+        <QuestionAnswer>
+          <Id>BF271CA7-BD9E-4A85-A00A-2AD536ABF7B7</Id>
+          <PointValue>400</PointValue>
+          <Question>What is eager, lazy, and explicit loading?</Question>
+          <Answer>The three ways the Entity Framework supports loading related data.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>C001DCEE-EEE5-4DF9-9E33-EF1D1070517E</Id>
-          <PointValue>400</PointValue>
-          <Visited>false</Visited>
-          <Question></Question>
-          <Answer></Answer>
-        </QuestionAnswer>
-        <QuestionAnswer>
-          <Id>BF271CA7-BD9E-4A85-A00A-2AD536ABF7B7</Id>
           <PointValue>500</PointValue>
-          <Answer></Answer>
-          <Question></Question>
+          <Question>What are navigation properties?</Question>
+          <Answer>These properties of an entity hold other entities that are related to that entity.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
       </questions>
     </Category>
     <Category>
-      <Name>Category 4</Name>
+      <Name>Stay in Controller</Name>
       <questions>
         <QuestionAnswer>
           <Id>24C2BA5A-DE6A-485D-ADC5-CEBD4B09AD53</Id>
           <PointValue>100</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is Controller?</Question>
+          <Answer>The input control layer in MVC pattern.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>480B9D81-D6A1-480A-8E15-C933E824BD8C</Id>
           <PointValue>200</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is ViewResult?</Question>
+          <Answer>The return type of a Controller action method used to return a webpage.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>EA4D6477-82BD-4B55-8361-78D5F0D172FE</Id>
           <PointValue>300</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is ActionResult?</Question>
+          <Answer>The name of the class that represents the result of an action method.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>D5B842A2-CA27-462E-B44C-93D8A8BDCBB4</Id>
           <PointValue>400</PointValue>
           <Visited>false</Visited>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is a model binder?</Question>
+          <Answer>The mechanism provided in MVC to map posted form values to a .NET Framework type and pass the type to an action method as a parameter. </Answer>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>0B7BE587-EBF3-498C-B102-DACDC452C5B3</Id>
           <PointValue>500</PointValue>
-          <Answer></Answer>
-          <Question></Question>
+          <Question>What is NonActionAttribute?</Question>
+          <Answer>The class that represents an attribute that is used to indicate that a controller method is not an action method.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
       </questions>
     </Category>
     <Category>
-      <Name>Category 5</Name>
+      <Name>In Route</Name>
       <questions>
         <QuestionAnswer>
           <Id>AF270912-9808-4D5A-B3ED-7733B3A8162B</Id>
           <PointValue>100</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is a route?</Question>
+          <Answer>This is a URL pattern that is mapped to a handler.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>0CD2349F-CAA1-4A32-9886-C384049469A2</Id>
           <PointValue>200</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is Authorization?</Question>
+          <Answer>Between Authorization and Exception, the filter that executes first.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>E78CBDE1-97B3-4F96-8A4B-36563B7DBF46</Id>
           <PointValue>300</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is Global.asax?</Question>
+          <Answer>The file where routes are registered in an ASP.NET MVC application.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>83185835-106C-47B6-9D34-47CC953F7E88</Id>
           <PointValue>400</PointValue>
           <Visited>false</Visited>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is the MvcHandler class?</Question>
+          <Answer>This class selects the controller that will handle an HTTP request.</Answer>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>FEFA4EB1-886F-4BD8-88A3-B8131BECF01C</Id>
           <PointValue>500</PointValue>
-          <Answer></Answer>
-          <Question></Question>
+          <Question>What is the IRouteConstraint interface?</Question>
+          <Answer>This interface defines the contract that a class must implement in order to check whether a URL parameter value is valid for a constraint.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
       </questions>
     </Category>
     <Category>
-      <Name>Category 6</Name>
+      <Name>Potpourri</Name>
       <questions>
         <QuestionAnswer>
           <Id>E25E6837-F9CE-41E7-93C7-F513AB4649E9</Id>
           <PointValue>100</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is model-view-controller?</Question>
+          <Answer>The terms represented in the acronym MVC.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>959C39A2-1CA2-4B09-B44F-90F8B864E693</Id>
           <PointValue>200</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is Create, Read, Update, and Delete?</Question>
+          <Answer>The action methods represented in the acronym CRUD.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>49A7332B-058B-40D6-BA0F-CBD8182E5984</Id>
           <PointValue>300</PointValue>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is Scaffolding?</Question>
+          <Answer>A term used to describe quickly generating a basic outline of your software that you can then edit and customize.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>85156DC4-DAD7-4A2C-ABF2-0C8949DF5CD0</Id>
           <PointValue>400</PointValue>
           <Visited>false</Visited>
-          <Question></Question>
-          <Answer></Answer>
+          <Question>What is System.Web.Mvc?</Question>
+          <Answer>The namespace containing all the interfaces and classes that supports ASP.NET MVC framework.</Answer>
         </QuestionAnswer>
         <QuestionAnswer>
           <Id>5EBA1199-85CE-417A-A1B5-417E9D391B34</Id>
           <PointValue>500</PointValue>
-          <Answer></Answer>
-          <Question></Question>
+          <Question>Who is Trygve Reenskaug?</Question>
+          <Answer>This Norwegian computer scientist introduced MVC into Smalltalk-76 while visiting Xerox Parc.</Answer>
           <Visited>false</Visited>
         </QuestionAnswer>
       </questions>

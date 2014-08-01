@@ -13,6 +13,10 @@ namespace MVCJeopardy.Core.Domain
         public string Answer;
         public int PointValue;
         public Guid Id;
+        public QuestionAnswer()
+        {
+
+        }
 
         public QuestionAnswer(string ans, string quest, int valu)
         {
@@ -20,14 +24,6 @@ namespace MVCJeopardy.Core.Domain
             Question = quest;
             Answer = ans;
             PointValue = valu;
-        }
-
-        public QuestionAnswer()
-        {
-            Visited = false;
-            Question = "Why did the Chicken cross the road?";
-            Answer = "To get to the other side.";
-            PointValue = 100;
         }
 
         public void SetVisited(bool set) {

@@ -11,33 +11,36 @@
     #boardPage {
         font-family: Arial;
         text-shadow: 0.1em 0.1em #000;
-        margin: 0px auto;
-        padding: 50px 100px;
+        margin: 0 auto;
+        padding: 50px 0px;
         text-align: center;
-        width: 80%;
+        width: 100%;
         background-color: rgba(255, 255, 255, 0.5);
     }
 
         #boardPage h1 {
             color: white;
-            font-size: 20pt;
+            font-size: 16pt;
         }
 
         #boardPage h4 {
             margin-top: 0px;
             color: white;
-            font-size: 16pt;
+            font-size: 12pt;
+            margin-bottom: 15px;
         }
 
     #board {
-        width: 720px;
+        table-layout: fixed;
+        margin: 0 auto;
+        width: 800px;
         border: 5px solid #ffd800;
     }
 
         #board thead tr td h1 {
             text-shadow: 0.1em 0.1em #000;
             margin: 0px;
-            font-size: 30pt;
+            font-size: 20pt;
             font-family: Impact;
             color: white;
             vertical-align: central;
@@ -47,8 +50,9 @@
         #board tr td {
             text-shadow: 0.1em 0.1em #000;
             width: 100px;
+            height: 48px;
             overflow: hidden;
-            font-size: 32pt;
+            font-size: 28pt;
             font-family: Impact;
             color: #ffdb00;
             vertical-align: central;
@@ -60,14 +64,41 @@
             #board tr td a {
                 color: #ffdb00;
             }
+
+            #doneScreen h1 {
+                padding-top: 0px;
+                margin-top: 15px;
+                font-size: 60pt;
+                font-family: Impact;
+                font-style: oblique;
+            }
+
+            #donescreen hr {
+                margin-bottom: 0px;
+            }
 </style>
-<script>
-</script>
 
 <div id="boardBG">
     <div id="boardPage" align="center">
         <h1>@Model.questionSet.Title</h1>
         <h4>"@Model.questionSet.Description"</h4>
+        <script>var allVisited = true;</script>
+        <div id="doneScreen" style="display:none;">
+            <h1>Good Game!</h1>
+            <hr />
+            <ul id="homenav">
+                <li>
+                    <strong>
+                        @Html.ActionLink("Restart", "Restart")
+                    </strong>
+                </li>
+                <li>
+                    <strong>
+                        @Html.ActionLink("Return home", "Index", "Home")
+                    </strong>
+                </li>
+            </ul>
+        </div>
         <table id="board" cellspacing="0" cellpadding="50" border="1" align="center">
             <thead>
                 <tr>
@@ -89,10 +120,11 @@
                         @for (int cCategory = 0; cCategory < Model.questionSet.gameBoard.Length; cCategory++)
                         {
                             <td align="center">
+
                                 @if (!Model.questionSet.gameBoard[cCategory].questions[cQuestion].Visited)
                                 {
                                     <a>$@Html.ActionLink(Model.questionSet.gameBoard[cCategory].questions[cQuestion].PointValue.ToString(), "ShowAnswer", new { sID = Model.questionSet.Id, cC = cCategory, cQ = cQuestion }, null)</a>
-
+                                    <script>allVisited = false;</script>
                                 }
                             </td>
                         }
@@ -102,3 +134,13 @@
         </table>
     </div>
 </div>
+<script>
+    var board = document.getElementById("board");
+    var msg = document.getElementById("doneScreen");
+
+    if (allVisited) {
+        msg.style.display = "block";
+        board.parentElement.removeChild(board);
+    }
+
+</script>

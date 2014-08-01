@@ -10,11 +10,11 @@ namespace MVCJeopardy.Core.Domain
     {
         public string Name;
         public QuestionAnswer[] questions;
-
         public Category()
         {
-            Name = "UNKNOWN";
+
         }
+
         public Category(string name, QuestionAnswer[] quests)
         {
             Name = name;

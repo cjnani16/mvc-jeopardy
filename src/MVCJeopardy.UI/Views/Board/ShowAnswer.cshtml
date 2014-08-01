@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>MVC Jeopardy</title>
     <style>
+        body {
+            font-family: Impact;
+        }
+
         #answerBG {
             background: url('http://media.giphy.com/media/10ZEYfjsQ5V160/giphy.gif') no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -17,13 +21,13 @@
             width: 100%;
         }
 
-    #answerPage {
-        margin: 0px auto;
-        padding: 50px 100px;
-        text-align: center;
-        width: 80%;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
+        #answerPage {
+            margin: 0px auto;
+            padding: 50px 100px;
+            text-align: center;
+            width: 81.5%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
 
     table {
         table-layout: fixed;
@@ -39,10 +43,12 @@
         color: #00ffff;
     }
 
-    #answer, #question {
-        padding: 30px 70px;
-        font-size: 25pt;
-    }
+        #answer, #question {
+            padding: 30px 70px;
+            font-size: 25pt;
+            text-shadow: 0.1em 0.1em black;
+            color: #FFEE8F;
+        }
 
     #answer {
         display: block;
@@ -51,6 +57,23 @@
     #question {
         display: none;
     }
+
+        h1 {
+            text-shadow: 0.1em 0.1em black;
+            color: rgb(240,240,240);
+        }
+
+        #showButton, #backButton {
+            font-size: 20pt;
+            font-family: Impact;
+            text-align: center;
+            color: rgb(240,240,240);
+            background-color: rgba(0,0,0,0);
+            outline: 0px solid rgba(0,0,0,0);
+            padding: 10px 20px;
+            text-shadow: 0.1em 0.1em black;
+            color: rgb(240,240,240);
+        }
     </style>
 </head>
 <body>
@@ -78,9 +101,9 @@
 
                 }
             </script>
-            <button id="showButton" onclick="showQuestion()" style="font-family: bold; text-align: center; color: rgb(240,240,240); background-color: #808080; outline: 2px solid #484848; padding: 10px 20px;" onmouseover="this.style.backgroundColor = '#9E9D9D'" onmouseout="    this.style.backgroundColor = '#808080'">Show question</button>
+            <div id="showButton" onclick="showQuestion()" onmouseover="this.style.textShadow = '0.2em 0.2em black'" onmouseout="    this.style.textShadow = '0.1em 0.1em black'">Show question</div>
 
-            <a href="@Url.Action("MarkVisited", "Board", new { g = Model.guid.ToString(), cC = Model.curC, cQ = Model.curQ })" id="backButton" style="font-size: 16.3167px; font-weight: 600; text-decoration: none; display: inline; font-family: bold; text-align: center; color: rgb(240,240,240); background-color: #808080; outline: 2px solid #484848; padding: 10px 20px;" onmouseover="this.style.backgroundColor = '#9E9D9D'" onmouseout="    this.style.backgroundColor = '#808080'">Return to board </a>
+            <a id="backButton" href="@Url.Action("MarkVisited", "Board", new { g = Model.guid.ToString(), cC = Model.curC, cQ = Model.curQ })" onmouseover="this.style.textShadow='0.2em 0.2em black' " onmouseout=" this.style.textShadow='0.1em 0.1em black'">Return to board </a>
              
         </div>
     </div>

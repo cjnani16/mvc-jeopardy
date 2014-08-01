@@ -83,8 +83,10 @@ namespace MVCJeopardy.UI
                 FileStream myFileStream = new FileStream(xmlFilePath, FileMode.Open);
                 // Call the Deserialize method and cast to the object type.
                 myObject = (QuestionSet) mySerializer.Deserialize(myFileStream);
+                myObject.sortCategories();
                 session.Store(myObject);
                 session.SaveChanges();
+                myFileStream.Close();
             }
         }
     }

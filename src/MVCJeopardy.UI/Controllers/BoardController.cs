@@ -33,6 +33,32 @@ namespace MVCJeopardy.UI.Controllers
             return View(model);
         }
 
+        public ActionResult Restart()
+        {
+            var qSet = _repository
+                .Load(Guid.Parse("38BBD34B-23F2-43CD-8BBE-37D27C7550DE"))
+                ;
+            if (qSet != null)
+            {
+                _repository.Delete(qSet);
+                _repository.SaveChanges();
+
+            }
+            var filePath = Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["QuestionSetXmlFile"]);
+            _repository.InsertFromXml(filePath);
+
+            qSet = _repository
+                .Load(Guid.Parse("38BBD34B-23F2-43CD-8BBE-37D27C7550DE"))
+                ;
+
+            var model = new BoardIndexModel
+            {
+                questionSet = qSet
+            };
+
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public ActionResult Index(string title, string desc, ICollection<string> qs, ICollection<string> ans, ICollection<int> vs, ICollection<string> cats, int nc, int nq)
         {

@@ -1,27 +1,25 @@
-﻿
-<div class="HomePageMid" style="background: url('http://www.placekitten.com/300/500') no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;"></div>
+﻿<style>
 
-<div class="MainTitle" style="text-align: center; margin: 15px; padding: 0px;">
-    <a href="@Url.Action("About")" ><img src="~/Images/jeopardyLogo.png" alt="MVC Jeopardy"/></a>
+    div, div img, a {
+        margin: 0px;
+    }
+
+    a {
+        height: 0px;
+    }
+
+    h1 strong a {
+        color: silver;
+    }
+</style>
+<div class="mainTitle" style="text-align: center; margin: 15px; padding: 0px;">
+    <a href="@Url.Action("About")"><img src="~/Images/jeopardyLogo.png" alt="MVC Jeopardy" /></a>
 </div>
 
 <div class="MainBody" align="center" style="width: 80%; margin: 0 auto;">
-    <table>
-        <tr>
-            <td style="background-color: #ff0000;">
-                <h2>small things.</h2>
-            </td>
-            <td style="background-color: #b200ff;">
-                <h3>they matter.</h3>
-            </td>
-            <td style="background-color: #0026ff;">
-                <h4>...right?</h4>
-            </td>
-        </tr>
-    </table>
-    <h2><strong>@Html.ActionLink("Play", "Mode", "Home")</strong></h2>
+        <ul id="homenav">
+            <li><strong>@Html.ActionLink("Create Set", "Create", "Home")</strong></li>
+            <li><strong>@Html.ActionLink("New Game", "Restart", "Board")</strong></li>
+            <li><strong>@Html.ActionLink("Resume", "Index", "Board")</strong></li>
+        </ul>
 </div>
